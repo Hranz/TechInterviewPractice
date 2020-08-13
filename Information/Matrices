@@ -1,0 +1,20 @@
+Matrices can be used to solve problems similar in to the Fibonacci Sequence.
+
+Definition:
+Fibonacci Sequence: Is a series that can be defined as f(n) = f(n-1) + f(n-2) where n > 1, f(0) = 0 and f(1) = 1.
+    Ex/ The first 10 numbers in the sequence are: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+
+Matrix: A collection of numbers arranged into a fixed number of rows and columns.
+    Ex/ A matrix of basis R^2 (two dimensions) is equivalent to a 2D array
+
+
+
+
+
+
+
+
+
+Sources:
+http://web.media.mit.edu/~holbrow/post/calculating-fibonacci-numbers-with-matrices-and-linear-algebra/
+https://medium.com/@andrew.chamberlain/the-linear-algebra-view-of-the-fibonacci-sequence-4e81f78935a3
