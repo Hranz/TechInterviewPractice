@@ -1,0 +1,71 @@
+The Fibonacci Sequence can be solved a number of ways, but this document is focusing on using matrices.
+Matrices can be used to solve problems similar in to the Fibonacci Sequence.
+
+Note: I'm about to butcher matrices.
+
+Definition:
+Fibonacci Sequence: Is a series that can be defined as f(n) = f(n-1) + f(n-2) where n > 1, f(0) = 0 and f(1) = 1.
+    Ex/ The first 10 numbers in the sequence are: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+
+Matrix: A collection of numbers arranged into a fixed number of rows and columns.
+    Ex/ A matrix of basis R^2 (two dimensions) is equivalent to a 2D array
+
+Consider the following:
+If        f(n)   = f(n-1) + f(n-2) and f(n) = (a * f(n-1)) + (b * f(n-2))
+Then      f(n)   = (1 * f(n-1)) + (1 * f(n-2))
+          f(n-1) = (1 * f(n-1)) + (0 * f(n-2))
+          f(n-2) = (0 * f(n-1)) + (1 * f(n-2))
+          
+          f(n) = 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,...
+          
+We can then set up the following:
+//Based on the base cases f(0) = 0 and f(1) = 1, we start with a vector u(0)
+       | f(1) |   | 1 |
+u(0) = |      | = |   |
+       | f(0) |   | 0 |
+       
+//We can get the following matrix from the 'a' and 'b' values in the functions we considered above for getting the next value.
+| 1    1 |
+|        |
+| 1    0 |
+
+//Using matrix multiplcation aka dot product, we can do the following to get the next vector u(1)
+       | 1    1 | | 1 |   | 1 |
+u(1) = |        | |   | = |   |
+       | 1    0 | | 0 |   | 1 |
+
+//More generally
+         | 1    1 |
+u(n+1) = |        | u(n)
+         | 1    0 |
+
+//Based on the information we considered above, we can do the following to get the next f(n)
+       | f(n) |    | 1    1 | |f(n-1)|
+u(n) = |      | =  |        | |      |
+       |f(n-1)|    | 1    0 | |f(n-2)|
+
+//Can also shown as (where the first matrix is taken to the power of n):
+       | 1    1 | ^ n  | 1 |
+u(n) = |        |      |   |
+       | 1    0 |      | 0 |
+       
+//Example: We want the third value of the Fibonacci Sequence
+//Let n = 3
+//So:
+       | 1    1 | ^ 3  | 1 |
+u(3) = |        |      |   |
+       | 1    0 |      | 0 |
+
+       | 1    1 | | 1    1 | | 1    1 || 1 |
+u(3) = |        | |        | |        ||   |
+       | 1    0 | | 1    0 | | 1    0 || 0 |
+
+       | 3 |   | f(4) |
+u(3) = |   | = |      |
+       | 2 |   | f(3) |
+       
+//Thus f(3) = 2
+       
+Sources:
+http://web.media.mit.edu/~holbrow/post/calculating-fibonacci-numbers-with-matrices-and-linear-algebra/
+https://medium.com/@andrew.chamberlain/the-linear-algebra-view-of-the-fibonacci-sequence-4e81f78935a3
