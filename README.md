@@ -1,6 +1,7 @@
 # TechInterviewPractice
 
-This is done for my personal use and will progress as I have time. Others can use it as they see fit.<br/>
+This is done for my personal use and will progress as I have time. Any information will be as detailed as I feel is necessary to achieve a decent understanding of a particular problem or solution.<br/>
+Others can use it as they see fit.<br/>
 
 Goal:<br/>
 The goal of this project is to provide adequate material to assist in passing a technical interview using C#. 
